@@ -64,6 +64,9 @@ public class LgeLteRIL extends RIL implements CommandsInterface {
 
         int numApplications = p.readInt();
 
+        cardStatus.mCdmaSubscriptionAppIndex = -1;
+        cardStatus.mImsSubscriptionAppIndex = -1;
+
         // limit to maximum allowed applications
         if (numApplications > IccCardStatus.CARD_MAX_APPS) {
             numApplications = IccCardStatus.CARD_MAX_APPS;
