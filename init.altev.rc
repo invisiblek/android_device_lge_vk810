@@ -360,35 +360,12 @@ on property:ro.build.type=userdebug
    mount debugfs /sys/kernel/debug /sys/kernel/debug
 
 on init
-    chmod 0701 /mnt/media_rw
-    mkdir /mnt/media_rw/sdcard1 0775 system system
-    mkdir /mnt/media_rw/usb 0775 system system
     # Set permissions for persist partition
     mkdir /persist 0771 system system
-    # See storage config details at http://source.android.com/tech/storage/
-    mkdir /mnt/shell/emulated 0700 shell shell
-    mkdir /storage 0550 system sdcard_r
-    mkdir /storage/emulated 0555 root root
-    mkdir /storage/emulated/legacy 0555 root root
-    mkdir /storage/sdcard1 0000 system system
-    mkdir /storage/usb 0000 system system
-
-
-    export EXTERNAL_STORAGE /storage/emulated/legacy
-    export EMULATED_STORAGE_SOURCE /mnt/shell/emulated
-    export EMULATED_STORAGE_TARGET /storage/emulated
-    export SECONDARY_STORAGE /storage/sdcard1:/storage/usb
 
     # Support legacy paths
-	#2013.03.13 add symlink for Docomo PlayReady DRM[START] 
-	symlink /storage/emulated/legacy /storage/emulated/0
-	#2013.03.13 add symlink for Docomo PlayReady DRM[END] 
-    symlink /storage/emulated/legacy /sdcard
-    symlink /storage/emulated/legacy /mnt/sdcard
-    symlink /storage/emulated/legacy /storage/sdcard0
-    symlink /storage/sdcard1 /external_sd
-    symlink /storage/sdcard1 /mnt/external_sd
-    symlink /storage/sdcard1 /storage/external_SD
+    symlink /sdcard /mnt/sdcard
+    symlink /sdcard /storage/sdcard0
 
 on early-boot
     # set RLIMIT_MEMLOCK to 64MB
@@ -589,9 +566,6 @@ on fs
 on post-fs-data
     write /sys/kernel/boot_adsp/boot 1
     setprop qcom.audio.init complete
-    # we will remap this as /mnt/sdcard with the sdcard fuse tool
-    mkdir /data/media 0770 media_rw media_rw
-    chown media_rw media_rw /data/media
 
 # LG_BTUI, 20120215, Permission for Bluetooth - [S]
 #    mkdir /data/misc/bluetooth 0770 bluetooth bluetooth
@@ -657,9 +631,6 @@ on post-fs-data
 
     setprop ro.ssbd.session /dev/block/platform/msm_sdcc.1/by-name/eksst
     setprop ro.ssbd.offset 0
-
-# bonkang.koo@lge.com 2012.10.23 set default sdcard fs type
-    setprop vold.sdcard_fs_type none
 
     chown root system /sys/devices/virtual/graphics/fb0/rgb
     chmod 0664 /sys/class/timed_output/vibrator/amp
@@ -926,33 +897,6 @@ service hostapd /system/bin/hostapd -dddd /data/hostapd/hostapd.conf
 on property:ro.data.large_tcp_window_size=true
     # Adjust socket buffer to enlarge TCP receive window for high bandwidth (e.g. DO-RevB)
     write /proc/sys/net/ipv4/tcp_adv_win_scale  1
-
-service sdcard /system/bin/sdcard -u 1023 -g 1023 -l /data/media /mnt/shell/emulated
-    class main
-#    disabled
-
-on property:ro.fuse_sdcard=true
-    start sdcard
-
-# Binding fuse mount point to /storage/emulated/legacy
-on property:init.svc.sdcard=running
-    wait /mnt/shell/emulated/0
-    mount none /mnt/shell/emulated/0 /storage/emulated/legacy bind
-
-# This will make sure that sdcard service starts as late_start.
-on nonencrypted
-    setprop ro.fuse_sdcard ${persist.fuse_sdcard}
-
-on property:vold.decrypt=trigger_restart_framework
-    setprop ro.fuse_sdcard ${persist.fuse_sdcard}
-
-service fuse_sdcard1 /system/bin/sdcard -u 1023 -g 1023 /mnt/media_rw/sdcard1 /storage/sdcard1
-    class late_start
-    disabled
-
-service fuse_usb /system/bin/sdcard -u 1023 -g 1023 /mnt/media_rw/usb /storage/usb
-    class late_start
-    disabled
 
 service hcidump /system/bin/sh /system/etc/hcidump.sh
     user bluetooth
