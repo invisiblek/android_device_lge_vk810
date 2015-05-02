@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 
-ifneq ($(filter v500 ,$(TARGET_DEVICE)),)
+ifneq ($(filter vk810 ,$(TARGET_DEVICE)),)
 
 LOCAL_PATH:= $(call my-dir)
 

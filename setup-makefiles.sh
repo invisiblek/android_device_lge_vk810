@@ -1,7 +1,7 @@
 #!/bin/sh
 
 VENDOR=lge
-DEVICE=v500
+DEVICE=vk810
 OUTDIR=vendor/$VENDOR/$DEVICE
 MAKEFILE=../../../$OUTDIR/$DEVICE-vendor-blobs.mk
 
@@ -110,7 +110,7 @@ EOF
 
 LOCAL_PATH := \$(call my-dir)
 
-ifeq (\$(TARGET_DEVICE),v500)
+ifeq (\$(TARGET_DEVICE),vk810)
 
 include \$(CLEAR_VARS)
 LOCAL_MODULE := libtime_genoff

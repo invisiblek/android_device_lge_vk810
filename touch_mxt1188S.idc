@@ -46,4 +46,4 @@ touch.orientation.calibration = none
 touch.distance.calibration = none
 touch.distance.scale = 1
 
-keyboard.layout = awifi-keypad-8064
+keyboard.layout = altev-keypad-8064

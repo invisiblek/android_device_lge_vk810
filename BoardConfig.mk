@@ -39,9 +39,8 @@ BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02000000
 
 # Try to build the kernel
 TARGET_KERNEL_SOURCE := kernel/lge/v500
-#TARGET_PREBUILT_KERNEL := device/lge/v500/kernel
-BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 user_debug=31 msm_rtb.filter=0x3F ehci-hcd.park=3 lpj=67677 androidboot.hardware=awifi vmalloc=400M no_console_suspend
-TARGET_KERNEL_CONFIG := cyanogenmod_v500_defconfig
+BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 user_debug=31 msm_rtb.filter=0x3F ehci-hcd.park=3 lpj=67677 androidboot.hardware=altev vmalloc=400M no_console_suspend
+TARGET_KERNEL_CONFIG := cyanogenmod_vk810_defconfig
 
 
 BOARD_USES_ALSA_AUDIO:= true
@@ -58,7 +57,7 @@ WPA_SUPPLICANT_VERSION := VER_0_8_X
 BOARD_WPA_SUPPLICANT_DRIVER := NL80211
 BOARD_HOSTAPD_DRIVER := NL80211
 
-BOARD_EGL_CFG := device/lge/v500/egl.cfg
+BOARD_EGL_CFG := device/lge/vk810/egl.cfg
 
 #BOARD_USES_HGL := true
 #BOARD_USES_OVERLAY := true
@@ -104,10 +103,10 @@ TARGET_DISPLAY_USE_RETIRE_FENCE := true
 BOARD_HAVE_BLUETOOTH_QCOM := true
 BLUETOOTH_HCI_USE_MCT := true
 
-TARGET_BOOTLOADER_BOARD_NAME := awifi
-TARGET_BOOTLOADER_NAME=v500
+TARGET_BOOTLOADER_BOARD_NAME := altev
+TARGET_BOOTLOADER_NAME=vk810
 
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/lge/v500/bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/lge/vk810/bluetooth
 
 # FIXME: HOSTAPD-derived wifi driver
 BOARD_HAS_QCOM_WLAN := true
@@ -119,7 +118,7 @@ BOARD_HOSTAPD_PRIVATE_LIB := lib_driver_cmd_$(BOARD_WLAN_DEVICE)
 
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 TARGET_RECOVERY_LCD_BACKLIGHT_PATH := \"/sys/class/leds/lcd-backlight/brightness\"
-TARGET_RECOVERY_FSTAB = device/lge/v500/fstab.gvar
+TARGET_RECOVERY_FSTAB = device/lge/vk810/fstab.altev
 
 BOARD_HAS_NO_SELECT_BUTTON := true
 
@@ -128,19 +127,17 @@ BOARD_HAS_NO_SELECT_BUTTON := true
 include device/qcom/sepolicy/sepolicy.mk
 
 BOARD_SEPOLICY_DIRS += \
-        device/lge/v500/sepolicy
+        device/lge/vk810/sepolicy
 
 BOARD_SEPOLICY_UNION += \
         bluetooth_loader.te \
         kernel.te
 
-TARGET_RELEASETOOLS_EXTENSIONS := device/lge/v500/releasetools
-
 BOARD_USES_QC_TIME_SERVICES := true
 
 COMMON_GLOBAL_CFLAGS += -DBOARD_CHARGING_CMDLINE_NAME='"androidboot.mode"' -DBOARD_CHARGING_CMDLINE_VALUE='"chargerlogo"'
 
-BOARD_HARDWARE_CLASS := device/lge/v500/cmhw/
+BOARD_HARDWARE_CLASS := device/lge/vk810/cmhw/
 
 TARGET_USES_LOGD := false
 BOARD_USES_LEGACY_MMAP := true

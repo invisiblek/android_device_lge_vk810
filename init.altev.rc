@@ -25,7 +25,7 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 
-import init.awifi.usb.rc
+import init.altev.usb.rc
 
 on post-fs-data
 
@@ -75,7 +75,7 @@ on early-fs
     mkdir /mpt 0775 system system
     mkdir /factory 0775 system system
     mkdir /sns 0775 system system
-    mount_all fstab.awifi
+    mount_all fstab.altev
     mkdir /sns/cal 0771 system system
 
     restorecon_recursive /sns
