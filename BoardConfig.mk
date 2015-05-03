@@ -41,6 +41,7 @@ BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02000000
 TARGET_KERNEL_SOURCE := kernel/lge/v500
 BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 user_debug=31 msm_rtb.filter=0x3F ehci-hcd.park=3 lpj=67677 androidboot.hardware=altev vmalloc=400M no_console_suspend
 TARGET_KERNEL_CONFIG := cyanogenmod_vk810_defconfig
+BOARD_CUSTOM_BOOTIMG := true
 BOARD_CUSTOM_BOOTIMG_MK := device/lge/vk810/mkbootimg.mk
 
 BOARD_USES_ALSA_AUDIO:= true
