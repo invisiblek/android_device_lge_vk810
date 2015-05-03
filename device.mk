@@ -186,11 +186,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PROPERTY_OVERRIDES += \
 	ro.bt.bdaddr_path=/data/misc/bdaddr
 
-PRODUCT_PROPERTY_OVERRIDES += \
-	ro.radio.noril=true \
-	ro.carrier=wifi-only
-
-
 $(call inherit-product, hardware/qcom/msm8960/msm8960.mk)
 
 $(call inherit-product, frameworks/native/build/tablet-7in-xhdpi-2048-dalvik-heap.mk)
