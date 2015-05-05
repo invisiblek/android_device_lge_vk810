@@ -31,6 +31,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     charger_res_images \
 
+PRODUCT_PACKAGES += \
+    libxml2
+
 # Live Wallpapers
 PRODUCT_PACKAGES += \
         LiveWallpapers \
