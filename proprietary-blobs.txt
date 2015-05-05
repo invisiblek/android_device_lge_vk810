@@ -170,3 +170,10 @@ vendor/lib/libril-qc-qmi-1.so
 vendor/lib/libril-qcril-hook-oem.so
 vendor/lib/libsmemlog.so
 vendor/lib/libsystem_health_mon.so
+etc/firmware/wcnss.b00
+etc/firmware/wcnss.b01
+etc/firmware/wcnss.b02
+etc/firmware/wcnss.b04
+etc/firmware/wcnss.b05
+etc/firmware/wcnss.b06
+etc/firmware/wcnss.mdt
