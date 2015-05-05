@@ -120,7 +120,6 @@ bin/thermald
 bin/rmt_storage
 bin/qmuxd
 bin/qmiproxy
-bin/rild
 bin/mm-qcamera-daemon
 bin/mpdecision
 bin/time_daemon
