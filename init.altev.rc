@@ -946,10 +946,8 @@ service hciattach_dut /system/bin/sh /system/etc/init.lge_dut.bt.sh
    disabled
    oneshot
     
-service charger /sbin/healthd -c
+service charger /sbin/charger_vk810
     class charger
-    critical
-    seclabel u:r:healthd:s0
 
 on property:persist.sys.cabc_off=true
     write /sys/devices/platform/mipi_lgit.1793/cabc_off 1

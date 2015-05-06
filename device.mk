@@ -146,6 +146,11 @@ PRODUCT_PACKAGES += \
 	libstagefrighthw \
 	libc2dcolorconvert
 
+# Offmode Charging
+PRODUCT_PACKAGES += \
+    charger_res_vk810 \
+    charger_vk810
+
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 	rild.libpath=/system/lib/libril-qc-qmi-1.so
 
