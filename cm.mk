@@ -19,5 +19,5 @@ PRODUCT_MANUFACTURER := LGE
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
   PRODUCT_NAME=altev_vzw \
-  BUILD_FINGERPRINT=lge/altev_vzw/altev:4.4.2/KOT49I.VK81023A/.1416370232:user/release-keys
-  PRIVATE_BUILD_DESC="altev_vzw-user 4.4.2 KOT49I.VK81023A .1416370232 release-keys"
+  BUILD_FINGERPRINT=lge/altev_vzw/altev:5.0.2/LRX22G/151122132be69:user/release-keys
+  PRIVATE_BUILD_DESC="altev_vzw-user 5.0.2 LRX22G 151122132be69 release-keys"
