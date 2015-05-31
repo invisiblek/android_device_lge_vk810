@@ -151,6 +151,10 @@ PRODUCT_PACKAGES += \
     charger_res_vk810 \
     charger_vk810
 
+# Power HAL
+PRODUCT_PACKAGES += \
+	power.msm8960
+
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 	rild.libpath=/system/lib/libril-qc-qmi-1.so
 
