@@ -170,6 +170,16 @@ service usf-post-boot /system/bin/sh /system/etc/usf_post_boot.sh
     disabled
     oneshot
 
+on property:init.svc.bootanim=running
+    # Switch to NOOP and performance mode while booting
+    setprop sys.perf.profile 2
+    write /sys/block/mmcblk0/queue/scheduler noop
+
+on property:init.svc.bootanim=stopped
+    # Switch to ROW and balanced mode after boot for better UX
+    setprop sys.perf.profile 1
+    write /sys/block/mmcblk0/queue/scheduler row
+
 on property:init.svc.bootanim=stopped
     start usf-post-boot
 
