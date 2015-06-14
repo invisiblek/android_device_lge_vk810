@@ -106,7 +106,7 @@ service gsiff_daemon /system/bin/gsiff_daemon
     user system
     group gps qcom_oncrpc net_raw
 
-service thermald /system/bin/thermald
+service thermald /system/bin/thermald -c /system/etc/thermald-8064.conf
    class main
    user root
    group root
