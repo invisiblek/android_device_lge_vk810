@@ -44,12 +44,12 @@ on post-fs-data
     chown root system /data/dontpanic
     chmod 0775 /data/dontpanic
 
-    chown system system /dev/wcnss_wlan
     write /sys/module/wcnss_ssr_8960/parameters/enable_riva_ssr 1
 
     # Workaround for conn_init not copying the updated firmware
     rm /data/misc/wifi/WCNSS_qcom_cfg.ini
     rm /data/misc/wifi/WCNSS_qcom_wlan_nv.bin
+    rm /data/misc/wifi/WCNSS_qcom_wlan_nv_init.bin
 
     #Create directory used by sensor subsystem(dsps)
     mkdir /data/system/sensors

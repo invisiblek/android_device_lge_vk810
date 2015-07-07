@@ -127,3 +127,7 @@
 
 /dev/block/mmcblk0p18     0660   root     system
 /dev/ttyHSL1              0660   system     inet
+
+# wlan
+/dev/wcnss_wlan           0660   system     system
+/dev/wcnss_ctrl           0660   system     system
