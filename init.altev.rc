@@ -82,6 +82,7 @@ on early-fs
     restorecon_recursive /persist
 
 on boot
+    chmod 0644 /proc/cmdline
     write /sys/devices/i2c-3/3-0024/cyttsp_update_fw 1
     write /sys/devices/i2c-3/3-005b/update_fw 1
     write /sys/module/rmnet_usb/parameters/rmnet_data_init 1
