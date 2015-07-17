@@ -110,6 +110,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PROPERTY_OVERRIDES += \
 	ro.opengles.version=196608
 
+# Art
+PRODUCT_PROPERTY_OVERRIDES += \
+    dalvik.vm.dex2oat-swap=false
+
 # Audio Configuration
 # FIXME: Remove persist.audio.handset.mic and persist.audio.fluence.mode
 #        while switching new audio HAL from legacy HAL
