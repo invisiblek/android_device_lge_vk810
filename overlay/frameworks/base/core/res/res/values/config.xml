@@ -26,28 +26,29 @@
     <bool name="config_showNavigationBar">true</bool>
 
     <integer-array name="config_autoBrightnessLevels">
+        <item>5</item>
         <item>10</item>
-        <item>55</item>
+        <item>50</item>
         <item>100</item>
-        <item>300</item>
+        <item>200</item>
         <item>400</item>
-        <item>650</item>
-        <item>850</item>
-        <item>1200</item>
-        <item>2500</item>
-        <item>4350</item>
+        <item>600</item>
+        <item>900</item>
+        <item>1700</item>
+        <item>3500</item>
+        <item>5000</item>
     </integer-array>
     <integer-array name="config_autoBrightnessLcdBacklightValues">
-        <item>45</item>
-        <item>76</item>
-        <item>105</item>
-        <item>125</item>
-        <item>145</item>
-        <item>167</item>
-        <item>170</item>
-        <item>180</item>
-        <item>204</item>
-        <item>219</item>
+        <item>64</item>
+        <item>71</item>
+        <item>85</item>
+        <item>106</item>
+        <item>124</item>
+        <item>148</item>
+        <item>177</item>
+        <item>179</item>
+        <item>198</item>
+        <item>211</item>
         <item>255</item>
     </integer-array>
     <integer-array name="config_autoBrightnessButtonBacklightValues">
@@ -78,9 +79,9 @@
     </integer-array>
 
     <bool name="config_automatic_brightness_available">true</bool>
-    <integer name="config_screenBrightnessDim">10</integer>
-    <integer name="config_screenBrightnessSettingDefault">102</integer>
-    <integer name="config_screenBrightnessSettingMinimum">10</integer>
+    <integer name="config_screenBrightnessDim">11</integer>
+    <integer name="config_screenBrightnessSettingDefault">177</integer>
+    <integer name="config_screenBrightnessSettingMinimum">5</integer>
 
     <!-- This device does not allow sms service. -->
     <bool name="config_sms_capable">false</bool>
