@@ -136,6 +136,7 @@ COMMON_GLOBAL_CFLAGS += -DBOARD_CHARGING_CMDLINE_NAME='"androidboot.mode"' -DBOA
 
 BOARD_HARDWARE_CLASS := device/lge/vk810/cmhw/
 
+TARGET_USES_LOGD := false
 BOARD_USES_LEGACY_MMAP := true
 
 # Radio
