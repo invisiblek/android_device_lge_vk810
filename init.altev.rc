@@ -44,12 +44,12 @@ on post-fs-data
     chown root system /data/dontpanic
     chmod 0775 /data/dontpanic
 
-    chown system system /dev/wcnss_wlan
     write /sys/module/wcnss_ssr_8960/parameters/enable_riva_ssr 1
 
     # Workaround for conn_init not copying the updated firmware
     rm /data/misc/wifi/WCNSS_qcom_cfg.ini
     rm /data/misc/wifi/WCNSS_qcom_wlan_nv.bin
+    rm /data/misc/wifi/WCNSS_qcom_wlan_nv_init.bin
 
     #Create directory used by sensor subsystem(dsps)
     mkdir /data/system/sensors
@@ -74,8 +74,6 @@ on early-init
 on early-fs
     mkdir /persist 0771 system system
     mkdir /persist-lg 0771 system system
-    mkdir /mpt 0775 system system
-    mkdir /factory 0775 system system
     mkdir /sns 0775 system system
     mount_all fstab.altev
     mkdir /sns/cal 0771 system system
@@ -84,8 +82,10 @@ on early-fs
     restorecon_recursive /persist
 
 on boot
+    chmod 0644 /proc/cmdline
     write /sys/devices/i2c-3/3-0024/cyttsp_update_fw 1
     write /sys/devices/i2c-3/3-005b/update_fw 1
+    write /sys/module/rmnet_usb/parameters/rmnet_data_init 1
 
 on post-fs-data
    mkdir /data/tombstones 0771 system system
@@ -108,7 +108,7 @@ service gsiff_daemon /system/bin/gsiff_daemon
     user system
     group gps qcom_oncrpc net_raw
 
-service thermald /system/bin/thermald
+service thermald /system/bin/thermald -c /system/etc/thermald-8064.conf
    class main
    user root
    group root
@@ -119,22 +119,12 @@ service mpdecision /system/bin/mpdecision --no_sleep --avg_comp
 
 # sungwook.park@lge.com 2013.04.23 change qcks, ks, efsks into system process
 service kickstart /system/bin/qcks -i /firmware/image/
-    user system
-    group system
-    seclabel u:r:mdm_helper:s0
     oneshot
     disabled
 
-service mdm_helper /system/bin/mdm_helper
-    class main
-    seclabel u:r:mdm_helper:s0
-    onrestart setprop ro.service.mdm_helper_restarted "true"
-    disabled
-
-#service qrngd /system/bin/qrngd -f
-#   class main
-#   user root
-#   group root
+on property:ro.baseband=mdm
+    mkdir /data/qcks 0770 system system
+    start kickstart
 
 service qseecomd /system/bin/qseecomd
    class late_start
@@ -178,9 +168,9 @@ on property:init.svc.bootanim=running
     write /sys/block/mmcblk0/queue/scheduler noop
 
 on property:init.svc.bootanim=stopped
-    # Switch to ROW and balanced mode after boot for better UX
+    # Switch to fiops and balanced mode after boot for better UX
     setprop sys.perf.profile 1
-    write /sys/block/mmcblk0/queue/scheduler row
+    write /sys/block/mmcblk0/queue/scheduler fiops
 
 on property:init.svc.bootanim=stopped
     start usf-post-boot
@@ -310,7 +300,6 @@ on post-fs-data
    chmod 0664 /sys/devices/system/cpu/cpu1/online
    chmod 0664 /sys/devices/system/cpu/cpu2/online
    chmod 0664 /sys/devices/system/cpu/cpu3/online
-   write /dev/cpuctl/apps/cpu.notify_on_migrate 1
    # set DCVS parameters for CPU
    write /sys/module/msm_dcvs/cores/cpu0/slack_time_max_us 40000
    write /sys/module/msm_dcvs/cores/cpu0/slack_time_min_us 40000
@@ -457,6 +446,9 @@ on boot
     chmod 2770 /dev/socket/qmux_bluetooth
     mkdir /dev/socket/qmux_gps 0770 gps gps
     chmod 2770 /dev/socket/qmux_gps
+
+    # Allow QMUX daemon to assign port open wait time
+    chown radio radio /sys/devices/virtual/hsicctl/hsicctl0/modem_wait
 
     setprop wifi.interface wlan0
     setprop ro.tether.denied true
@@ -770,7 +762,7 @@ service qmiproxy /system/bin/qmiproxy
 
 # QMUX must be in multiple groups to support external process connections
 service qmuxd /system/bin/qmuxd
-    class main
+    class core
     user radio
     group radio audio bluetooth gps qcom_diag
 

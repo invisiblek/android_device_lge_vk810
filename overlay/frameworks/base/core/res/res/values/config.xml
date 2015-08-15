@@ -102,15 +102,24 @@
     </integer-array>
 
     <string-array translatable="false" name="networkAttributes">
+        <item>"wifi,1,1,1,-1,true"</item>
         <item>"mobile,0,0,0,-1,true"</item>
-        <item>"wifi,1,1,2,-1,true"</item>
-        <item>"bluetooth,7,7,0,-1,true"</item>
+        <item>"mobile_mms,2,0,2,60000,true"</item>
+        <item>"mobile_supl,3,0,2,60000,true"</item>
+        <item>"mobile_dun,4,0,2,60000,true"</item>
+        <item>"mobile_hipri,5,0,3,60000,true"</item>
+        <item>"mobile_fota,10,0,2,60000,true"</item>
+        <item>"mobile_ims,11,0,2,60000,true"</item>
+        <item>"mobile_cbs,12,0,2,60000,true"</item>
+        <item>"bluetooth,7,7,2,-1,true"</item>
+        <item>"ethernet,9,9,9,-1,true"</item>
     </string-array>
 
     <string-array translatable="false" name="radioAttributes">
-        <item>"0,1"</item>
         <item>"1,1"</item>
+        <item>"0,1"</item>
         <item>"7,1"</item>
+        <item>"9,1"</item>
     </string-array>
 
     <string-array translatable="false" name="config_tether_bluetooth_regexs">
@@ -130,5 +139,24 @@
      <!-- Performance profiles -->
      <string name="config_perf_profile_prop">sys.perf.profile</string>
      <string name="config_perf_profile_default_entry">1</string>
+
+     <!-- Shutdown if the battery temperature exceeds (this value * 0.1) Celsius. -->
+     <integer name="config_shutdownBatteryTemperature">791</integer>
+
+     <!-- Boolean indicating if restoring network selection should be skipped -->
+     <!-- The restoring is handled by modem if it is true -->
+     <bool translatable="false" name="skip_restoring_network_selection">true</bool>
+
+     <!-- Set to true to add links to Cell Broadcast app from Settings and MMS app. -->
+     <bool name="config_cellBroadcastAppLinks">true</bool>
+
+     <!-- Configure mobile tcp buffer sizes in the form:
+          rat-name:rmem_min,rmem_def,rmem_max,wmem_min,wmem_def,wmem_max
+          If no value is found for the rat-name in use, the system default will be applied.
+     -->
+     <string-array name="config_mobile_tcp_buffers">
+         <item>hspa:4094,87380,704512,4096,16384,262144</item>
+         <item>lte:524288,1048576,2560000,262144,524288,1048576</item>
+     </string-array>
 
 </resources>

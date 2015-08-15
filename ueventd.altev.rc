@@ -41,6 +41,15 @@
 /dev/smd7                 0660   bluetooth  bluetooth
 /dev/radio0               0640   fm_radio   fm_radio
 /dev/rfcomm0              0660   bluetooth  bluetooth
+/dev/smdcnt_rev0          0640   radio      radio
+/dev/smdcnt_rev1          0640   radio      radio
+/dev/smdcnt_rev2          0640   radio      radio
+/dev/smdcnt_rev3          0640   radio      radio
+/dev/smdcnt_rev4          0640   radio      radio
+/dev/smdcnt_rev5          0640   radio      radio
+/dev/smdcnt_rev6          0640   radio      radio
+/dev/smdcnt_rev7          0640   radio      radio
+/dev/smdcnt_rev8          0640   radio      radio
 /dev/smdcntl0             0640   radio      radio
 /dev/smdcntl1             0640   radio      radio
 /dev/smdcntl2             0640   radio      radio
@@ -127,3 +136,7 @@
 
 /dev/block/mmcblk0p18     0660   root     system
 /dev/ttyHSL1              0660   system     inet
+
+# wlan
+/dev/wcnss_wlan           0660   system     system
+/dev/wcnss_ctrl           0660   system     system
