@@ -97,6 +97,10 @@ PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/gps.conf:system/etc/gps.conf \
 	$(LOCAL_PATH)/sap.conf:system/etc/sap.conf
 
+# IRSC
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/sec_config:system/etc/sec_config
+
 PRODUCT_PROPERTY_OVERRIDES += \
 	ro.opengles.version=196608
 

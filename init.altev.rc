@@ -674,6 +674,11 @@ on property:vold.decrypt=trigger_restart_framework
     start sensors
     start conn_init
 
+service irsc_util /system/bin/irsc_util "/etc/sec_config"
+    class main
+    user root
+    oneshot
+
 service rmt_storage /system/bin/rmt_storage
     class core
     user root

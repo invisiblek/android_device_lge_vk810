@@ -2,6 +2,7 @@ bin/ATFWD-daemon
 bin/btnvtool
 bin/efsks
 bin/hci_qcomm_init
+bin/irsc_util
 bin/ks
 bin/mm-qcamera-daemon
 bin/mpdecision
