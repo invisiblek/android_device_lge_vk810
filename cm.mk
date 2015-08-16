@@ -22,3 +22,5 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
   PRODUCT_NAME=altev_vzw \
   BUILD_FINGERPRINT=lge/altev_vzw/altev:5.0.2/LRX22G/151122132be69:user/release-keys
   PRIVATE_BUILD_DESC="altev_vzw-user 5.0.2 LRX22G 151122132be69 release-keys"
+
+PRODUCT_GMS_CLIENTID_BASE := android-verizon
