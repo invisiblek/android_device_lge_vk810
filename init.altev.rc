@@ -120,6 +120,9 @@ service mpdecision /system/bin/mpdecision --no_sleep --avg_comp
 
 # sungwook.park@lge.com 2013.04.23 change qcks, ks, efsks into system process
 service kickstart /system/bin/qcks -i /firmware/image/
+    class core
+    user system
+    group system
     oneshot
     disabled
 
