@@ -140,3 +140,8 @@
 # wlan
 /dev/wcnss_wlan           0660   system     system
 /dev/wcnss_ctrl           0660   system     system
+
+# m9kefs*
+/dev/block/mmcblk0p12     0660   system     system
+/dev/block/mmcblk0p13     0660   system     system
+/dev/block/mmcblk0p14     0660   system     system
