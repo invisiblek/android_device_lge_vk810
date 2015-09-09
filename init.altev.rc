@@ -172,9 +172,8 @@ on property:init.svc.bootanim=running
     write /sys/block/mmcblk0/queue/scheduler noop
 
 on property:init.svc.bootanim=stopped
-    # Switch to fiops and balanced mode after boot for better UX
     setprop sys.perf.profile 1
-    write /sys/block/mmcblk0/queue/scheduler fiops
+    write /sys/block/mmcblk0/queue/scheduler bfq
 
 on property:init.svc.bootanim=stopped
     start usf-post-boot
