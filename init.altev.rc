@@ -1040,6 +1040,7 @@ on property:sys.perf.profile=1
     write /sys/module/msm_thermal/core_control/enabled 1
     start mpdecision
     setprop sys.io.scheduler bfq
+    write /sys/block/mmcblk0/queue/iosched/slice_idle 0
 
 # High performance
 on property:sys.perf.profile=2
