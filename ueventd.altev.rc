@@ -145,3 +145,6 @@
 /dev/block/mmcblk0p12     0660   system     system
 /dev/block/mmcblk0p13     0660   system     system
 /dev/block/mmcblk0p14     0660   system     system
+
+/dev/ks_hsic_bridge       0660   system     system
+/dev/efs_hsic_bridge      0660   system     system
