@@ -137,7 +137,6 @@ BOARD_HARDWARE_CLASS += \
     device/lge/vk810/cmhw \
     hardware/cyanogen/cmhw
 
-TARGET_USES_LOGD := false
 BOARD_USES_LEGACY_MMAP := true
 
 # Radio
