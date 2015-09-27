@@ -699,6 +699,11 @@ service config_bluetooth /system/bin/sh /system/etc/init.qcom.bt.sh "onboot"
     user root
     oneshot
 
+service altev_baseband /system/bin/sh /system/etc/init.altev.baseband.sh
+    class core
+    user root
+    oneshot
+
 service dbus /system/bin/dbus-daemon --system --nofork
     class core
     socket dbus stream 660 bluetooth bluetooth

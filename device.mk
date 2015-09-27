@@ -203,6 +203,7 @@ PRODUCT_PACKAGES += \
 	hwaddrs
 
 PRODUCT_COPY_FILES += \
+	$(LOCAL_PATH)/init.altev.baseband.sh:system/etc/init.altev.baseband.sh \
 	$(LOCAL_PATH)/init.qcom.bt.sh:system/etc/init.qcom.bt.sh
 
 PRODUCT_PROPERTY_OVERRIDES += \
