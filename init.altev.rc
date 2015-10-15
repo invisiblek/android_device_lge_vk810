@@ -756,11 +756,11 @@ service qmuxd /system/bin/qmuxd
 service netmgrd /system/bin/netmgrd
     class main
 
-service sensors /system/bin/sensors.qcom
-    class late_start
-    user root
-    group root radio system
-    disabled
+#service sensors /system/bin/sensors.qcom
+#    class late_start
+#    user root
+#    group root radio system
+#    disabled
 
 on property:ro.dsps.ready=true
     start sensors
