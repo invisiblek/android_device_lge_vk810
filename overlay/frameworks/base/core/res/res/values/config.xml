@@ -19,7 +19,7 @@
 
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
-    <integer name="config_deviceHardwareKeys">64</integer>
+    <!--integer name="config_deviceHardwareKeys">64</integer-->
 
     <!-- Whether a software navigation bar should be shown. NOTE: in the future this may be
                            autodetected from the Configuration. -->
@@ -138,8 +138,8 @@
     <bool name="config_hotswapCapable">true</bool>
 
      <!-- Performance profiles -->
-     <string name="config_perf_profile_prop">sys.perf.profile</string>
-     <string name="config_perf_profile_default_entry">1</string>
+     <!--string name="config_perf_profile_prop">sys.perf.profile</string-->
+     <!--string name="config_perf_profile_default_entry">1</string-->
 
      <!-- Shutdown if the battery temperature exceeds (this value * 0.1) Celsius. -->
      <integer name="config_shutdownBatteryTemperature">791</integer>
