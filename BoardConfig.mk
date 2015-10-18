@@ -137,5 +137,4 @@ TARGET_TAP_TO_WAKE_NODE := "/sys/devices/virtual/input/lge_touch/knock_on"
 BOARD_USES_LEGACY_MMAP := true
 
 # Radio
-TARGET_RELEASE_CPPFLAGS += -DNEEDS_LGE_RIL_SYMBOLS
 BOARD_RIL_CLASS := ../../../device/lge/vk810/ril/
