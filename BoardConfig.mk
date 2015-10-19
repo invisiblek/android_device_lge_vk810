@@ -132,6 +132,7 @@ BOARD_USES_CYANOGEN_HARDWARE := true
 BOARD_HARDWARE_CLASS += \
     device/lge/vk810/cmhw \
     hardware/cyanogen/cmhw
+TARGET_TAP_TO_WAKE_NODE := "/sys/devices/virtual/input/lge_touch/knock_on"
 
 BOARD_USES_LEGACY_MMAP := true
 
