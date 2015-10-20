@@ -176,6 +176,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PACKAGES += \
     liblge
 
+# SSL Compat
+PRODUCT_PACKAGES += \
+    libboringssl-compat
+
 # Enable AAC 5.1 output
 PRODUCT_PROPERTY_OVERRIDES += \
     media.aac_51_output_enabled=true
