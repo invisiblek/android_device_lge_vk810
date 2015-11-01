@@ -109,11 +109,6 @@ service gsiff_daemon /system/bin/gsiff_daemon
     user system
     group gps qcom_oncrpc net_raw
 
-service thermald /system/bin/thermald -c /system/etc/thermald-8064.conf
-   class main
-   user root
-   group root
-
 service mpdecision /system/bin/mpdecision --no_sleep --avg_comp
    class late_start
    user root
@@ -255,7 +250,6 @@ on post-fs-data
    write /sys/module/pm_8x60/modes/cpu2/standalone_power_collapse/idle_enabled 1
    write /sys/module/pm_8x60/modes/cpu3/standalone_power_collapse/idle_enabled 1
    write /sys/module/pm_8x60/modes/cpu0/power_collapse/idle_enabled 1
-   write /sys/module/msm_thermal/core_control/enabled 0
    write /sys/devices/system/cpu/cpu1/online 1
    write /sys/devices/system/cpu/cpu2/online 1
    write /sys/devices/system/cpu/cpu3/online 1
@@ -293,7 +287,6 @@ on post-fs-data
    write /sys/devices/system/cpu/cpufreq/ondemand/middle_grid_load 53     
    write /sys/devices/system/cpu/cpufreq/ondemand/high_grid_load 65     
    write /sys/devices/system/cpu/cpufreq/ondemand/optimal_max_freq 1026000
-   write /sys/module/msm_thermal/core_control/enabled 1
    chown root system /sys/devices/system/cpu/mfreq
    chmod 0220 /sys/devices/system/cpu/mfreq
    chown root system /sys/devices/system/cpu/cpu1/online
@@ -941,7 +934,6 @@ service conn_init /system/bin/conn_init
 # Powersave
 on property:sys.perf.profile=0
     stop mpdecision
-    write /sys/module/msm_thermal/core_control/enabled 0
     write /sys/devices/system/cpu/cpu0/online 1
     write /sys/devices/system/cpu/cpu1/online 1
     write /sys/devices/system/cpu/cpu2/online 1
@@ -958,13 +950,11 @@ on property:sys.perf.profile=0
     write /sys/devices/system/cpu/cpufreq/conservative/sampling_rate_min 160000
     write /sys/devices/system/cpu/cpufreq/conservative/up_threshold 90
     write /sys/class/kgsl/kgsl-3d0/pwrscale/trustzone/governor ondemand
-    write /sys/module/msm_thermal/core_control/enabled 1
     start mpdecision
 
 # Balanced
 on property:sys.perf.profile=1
     stop mpdecision
-    write /sys/module/msm_thermal/core_control/enabled 0
     write /sys/devices/system/cpu/cpu0/online 1
     write /sys/devices/system/cpu/cpu1/online 1
     write /sys/devices/system/cpu/cpu2/online 1
@@ -986,7 +976,6 @@ on property:sys.perf.profile=1
     write /sys/devices/system/cpu/cpufreq/interactive/up_threshold_any_cpu_freq 810000
     write /sys/devices/system/cpu/cpufreq/interactive/up_threshold_any_cpu_load 70
     write /sys/class/kgsl/kgsl-3d0/pwrscale/trustzone/governor ondemand
-    write /sys/module/msm_thermal/core_control/enabled 1
     start mpdecision
     setprop sys.io.scheduler bfq
 

@@ -196,9 +196,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
         $(LOCAL_PATH)/mixer_paths.xml:system/etc/mixer_paths.xml
 
-PRODUCT_COPY_FILES += \
-	$(LOCAL_PATH)/thermald-8064.conf:system/etc/thermald-8064.conf
-
 PRODUCT_PROPERTY_OVERRIDES += \
 	ro.sf.lcd_density=320
 
