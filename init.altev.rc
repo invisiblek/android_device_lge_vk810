@@ -88,6 +88,10 @@ on boot
     write /sys/devices/i2c-3/3-005b/update_fw 1
     write /sys/module/rmnet_usb/parameters/rmnet_data_init 1
 
+    # Adaptive LMK
+    write /sys/module/lowmemorykiller/parameters/enable_adaptive_lmk 1
+    write /sys/module/lowmemorykiller/parameters/vmpressure_file_min 53059
+
 on post-fs-data
    mkdir /data/tombstones 0771 system system
    mkdir /tombstones/modem 0771 system system
