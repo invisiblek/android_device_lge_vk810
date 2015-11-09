@@ -73,7 +73,6 @@ lib/libchromatix_s5k4e1_preview.so
 lib/libchromatix_s5k4e5ya_default_video.so
 lib/libchromatix_s5k4e5ya_preview.so
 lib/libchromatix_s5k4e5ya_zsl.so
-lib/libcnefeatureconfig.so
 lib/libCommandSvc.so
 lib/libconfigdb.so
 lib/libcsd-client.so

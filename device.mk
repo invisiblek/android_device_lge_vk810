@@ -32,6 +32,7 @@ PRODUCT_PACKAGES += \
     charger_res_images \
 
 PRODUCT_PACKAGES += \
+    libcnefeatureconfig \
     libxml2
 
 # Live Wallpapers
