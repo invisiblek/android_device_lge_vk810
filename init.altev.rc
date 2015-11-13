@@ -113,9 +113,10 @@ service gsiff_daemon /system/bin/gsiff_daemon
     user system
     group gps qcom_oncrpc net_raw
 
-service mpdecision /system/bin/mpdecision --no_sleep --avg_comp
+service mpdecision /system/bin/mpdecision --avg_comp
    class late_start
    user root
+   group system
 
 # sungwook.park@lge.com 2013.04.23 change qcks, ks, efsks into system process
 service kickstart /system/bin/qcks -i /firmware/image/
@@ -168,8 +169,7 @@ service usf-post-boot /system/bin/sh /system/etc/usf_post_boot.sh
 on property:init.svc.bootanim=running
     write /sys/block/mmcblk0/queue/scheduler noop
 
-on property:init.svc.bootanim=stopped
-    stop mpdecision
+on enable-low-power
     write /sys/devices/system/cpu/cpu0/online 1
     write /sys/devices/system/cpu/cpu1/online 1
     write /sys/devices/system/cpu/cpu2/online 1
@@ -191,7 +191,6 @@ on property:init.svc.bootanim=stopped
     write /sys/devices/system/cpu/cpufreq/interactive/up_threshold_any_cpu_freq 810000
     write /sys/devices/system/cpu/cpufreq/interactive/up_threshold_any_cpu_load 70
     write /sys/class/kgsl/kgsl-3d0/pwrscale/trustzone/governor ondemand
-    start mpdecision
     setprop sys.io.scheduler bfq
     start usf-post-boot
 
@@ -558,6 +557,8 @@ on boot
     # Change owner and group for media server and surface flinger
     chown system system /sys/devices/virtual/graphics/fb1/format_3d
     chown system system /sys/devices/virtual/graphics/fb1/hpd
+
+    trigger enable-low-power
 
 on fs
 # LGE_CHANGED_S [2013-02-14][jungjoo.nahm@lge.com] for widevine drm and lgdrm(future-use)
