@@ -954,3 +954,8 @@ service conn_init /system/bin/conn_init
     user system
     group system wifi
     oneshot
+
+service atfwd /system/bin/ATFWD-daemon
+    class late_start
+    user system
+    group system radio
