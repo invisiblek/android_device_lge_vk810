@@ -181,6 +181,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PACKAGES += \
     liblge
 
+# Shims
+PRODUCT_PACKAGES += \
+    libshim_qcopt
+
 # SSL Compat
 PRODUCT_PACKAGES += \
     libboringssl-compat

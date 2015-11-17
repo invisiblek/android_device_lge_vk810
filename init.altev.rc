@@ -201,6 +201,8 @@ service time_daemon /system/bin/time_daemon
 
 on init
    export LD_PRELOAD /system/lib/liblge.so:/system/lib/libboringssl-compat.so
+   export LD_SHIM_LIBS "/system/vendor/lib/libqc-opt.so|libshim_qcopt.so"
+
 # yeunbok.ryu keyguard file for ghost finger
    chown system system /sys/devices/virtual/input/lge_touch/keyguard
    chmod 664 /sys/devices/virtual/input/lge_touch/keyguard
