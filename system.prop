@@ -10,6 +10,7 @@ ro.telephony.get_imsi_from_sim=true
 ro.telephony.ril_class=LgeLteRIL
 persist.radio.apm_sim_not_pwdn=1
 ril.subscription.types=NV,RUIM
+ro.ril.telephony.mqanelements=5
 ro.ril.transmitpower=true
 persist.qcril.disable_retry=true
 ro.telephony.default_cdma_sub=0
