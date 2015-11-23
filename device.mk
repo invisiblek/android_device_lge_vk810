@@ -158,8 +158,13 @@ PRODUCT_PACKAGES += \
 	libOmxVdec \
 	libOmxVenc \
 	libOmxCore \
+	libOmxAacEnc \
+	libOmxAmrEnc \
+	libOmxEvrcEnc \
+	libOmxQcelp13Enc \
 	libstagefrighthw \
-	libc2dcolorconvert
+	libc2dcolorconvert \
+	qcmediaplayer
 
 # Offmode Charging
 PRODUCT_PACKAGES += \
