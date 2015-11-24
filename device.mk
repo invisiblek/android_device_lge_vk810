@@ -191,10 +191,6 @@ PRODUCT_PACKAGES += \
     libshim_camera \
     libshim_qcopt
 
-# SSL Compat
-PRODUCT_PACKAGES += \
-    libboringssl-compat
-
 # Enable AAC 5.1 output
 PRODUCT_PROPERTY_OVERRIDES += \
     media.aac_51_output_enabled=true
