@@ -152,7 +152,6 @@ PRODUCT_PACKAGES += \
 	libaudio-resampler
 
 PRODUCT_PACKAGES += \
-	libdashplayer \
 	libmm-omxcore \
 	libdivxdrmdecrypt \
 	libOmxVdec \
@@ -163,8 +162,7 @@ PRODUCT_PACKAGES += \
 	libOmxEvrcEnc \
 	libOmxQcelp13Enc \
 	libstagefrighthw \
-	libc2dcolorconvert \
-	qcmediaplayer
+	libc2dcolorconvert
 
 # Offmode Charging
 PRODUCT_PACKAGES += \
