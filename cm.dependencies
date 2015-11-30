@@ -2,9 +2,5 @@
  {
    "repository": "android_kernel_lge_vk810",
    "target_path": "kernel/lge/vk810"
- },
- {
-   "repository": "android_external_connectivity",
-   "target_path": "external/connectivity"
  }
 ]
