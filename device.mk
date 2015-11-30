@@ -147,7 +147,6 @@ PRODUCT_PACKAGES += \
 	libaudio-resampler
 
 PRODUCT_PACKAGES += \
-	libdashplayer \
 	libmm-omxcore \
 	libdivxdrmdecrypt \
 	libOmxVdec \
