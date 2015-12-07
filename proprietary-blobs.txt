@@ -145,9 +145,11 @@ vendor/lib/libc2d30-a3xx.so
 vendor/lib/libCB.so
 vendor/lib/libcneapiclient.so
 vendor/lib/libdiag.so
+vendor/lib/libDivxDrm.so
 vendor/lib/libgeofence.so
 vendor/lib/libgsl.so
 vendor/lib/libllvm-qcom.so
+vendor/lib/libmmosal.so
 vendor/lib/libqmi_cci.so
 vendor/lib/libqmi_common_so.so
 vendor/lib/libqmi_csi.so
@@ -155,6 +157,7 @@ vendor/lib/libqmi_encdec.so
 vendor/lib/libqti-perfd-client.so
 vendor/lib/libril-qc-qmi-1.so
 vendor/lib/libsc-a3xx.so
+vendor/lib/libSHIMDivxDrm.so
 vendor/lib/libtime_genoff.so
 vendor/lib/libwvdrm_L1.so
 vendor/lib/libwvm.so
