@@ -11,7 +11,6 @@
 /persist/\.bt.*                    u:object_r:persist_bluetooth_file:s0
 /dev/smd3                          u:object_r:hci_attach_dev:s0
 
-/system/bin/btnvtool               u:object_r:bluetooth_loader_exec:s0
 /system/bin/hci_qcomm_init         u:object_r:hci_attach_exec:s0
 /system/etc/init\.qcom\.bt\.sh     u:object_r:bluetooth_loader_exec:s0
 
