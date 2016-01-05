@@ -60,6 +60,9 @@ TARGET_USES_C2D_COMPOSITION := false
 
 OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
 
+# Platform
+USE_CLANG_PLATFORM_BUILD := true
+
 # Power HAL
 TARGET_POWERHAL_VARIANT := qcom
 
