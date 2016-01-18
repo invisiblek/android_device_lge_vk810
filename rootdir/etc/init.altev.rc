@@ -200,7 +200,7 @@ service time_daemon /system/bin/time_daemon
    group root
 
 on init
-   export LD_SHIM_LIBS "/system/vendor/lib/libqc-opt.so|libshim_qcopt.so:/system/lib/hw/camera.msm8960.so|libshim_camera.so:/system/lib/libril.so|liblge.so"
+   export LD_SHIM_LIBS "/system/vendor/lib/libqc-opt.so|libshim_qcopt.so:/system/lib/hw/camera.msm8960.so|libshim_camera.so:/system/lib/libril.so|libshim_ril.so"
 
 # yeunbok.ryu keyguard file for ghost finger
    chown system system /sys/devices/virtual/input/lge_touch/keyguard
@@ -670,13 +670,13 @@ service rmt_storage /system/bin/rmt_storage
 on property:ro.boot.emmc=true
     start rmt_storage
 
-service config_bluetooth /system/bin/sh /system/etc/init.qcom.bt.sh "onboot"
+service config_bluetooth /system/bin/sh init.qcom.bt.sh "onboot"
     class core
     seclabel u:r:bluetooth_loader:s0
     user root
     oneshot
 
-service altev_baseband /system/bin/sh /system/etc/init.altev.baseband.sh
+service altev_baseband /system/bin/sh init.altev.baseband.sh
     class core
     user root
     oneshot
@@ -700,7 +700,7 @@ service bluetoothd /system/bin/logwrapper /system/bin/bluetoothd -n
     group bluetooth net_bt_admin misc net_bt_stack
     disabled
 
-service hciattach /system/bin/sh /system/etc/init.qcom.bt.sh
+service hciattach /system/bin/sh init.qcom.bt.sh
     class late_start
     user bluetooth
     group qcom_oncrpc bluetooth net_bt_admin  system

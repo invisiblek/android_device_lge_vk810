@@ -14,67 +14,101 @@
 # limitations under the License.
 #
 
+PRODUCT_CHARACTERISTICS := tablet
+DEVICE_PACKAGE_OVERLAYS := device/lge/vk810/overlay
+
+# Audio
+PRODUCT_COPY_FILES += \
+	device/lge/vk810/audio/audio_policy.conf:system/etc/audio_policy.conf \
+	device/lge/vk810/audio/mixer_paths.xml:system/etc/mixer_paths.xml
+
+PRODUCT_PACKAGES += \
+	audio_policy.msm8960 \
+	audio.primary.msm8960 \
+	audio.a2dp.default \
+	audio.usb.default \
+	audio.r_submix.default \
+	libaudio-resampler
+
+# Dalvik
+PRODUCT_TAGS += dalvik.gc.type-precise
+
+# Display
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xhdpi
-
-PRODUCT_CHARACTERISTICS := tablet
-
-DEVICE_PACKAGE_OVERLAYS := $(LOCAL_PATH)/overlay
+PRODUCT_PACKAGES += \
+	libgenlock \
+	liboverlay \
+	hwcomposer.msm8960 \
+	gralloc.msm8960 \
+	copybit.msm8960 \
+	memtrack.msm8960
 
 PRODUCT_PACKAGES += \
-    libwpa_client \
-    hostapd \
-    dhcpcd.conf \
-    wpa_supplicant \
-    wpa_supplicant.conf
+	librs_jni
 
+# GPS configuration
+PRODUCT_COPY_FILES += \
+	device/lge/vk810/configs/gps.conf:system/etc/gps.conf \
+	device/lge/vk810/configs/sap.conf:system/etc/sap.conf
+
+# Init
 PRODUCT_PACKAGES += \
-    charger_res_images \
+	fstab.altev \
+	init.altev.baseband.sh \
+	init.altev.rc \
+	init.altev.usb.rc \
+	init.qcom.bt.sh \
+	ueventd.altev.rc
 
+# Input device calibration
+PRODUCT_COPY_FILES += \
+	device/lge/vk810/idc/touch_mxt1188S.idc:system/usr/idc/touch_mxt1188S.idc
+
+# IPv6 tethering
 PRODUCT_PACKAGES += \
-    libcnefeatureconfig \
-    libxml2
+	ebtables \
+	ethertypes
 
-# Live Wallpapers
+# IRSC
+PRODUCT_COPY_FILES += \
+	device/lge/vk810/configs/sec_config:system/etc/sec_config
+
+# Keys
+PRODUCT_COPY_FILES += \
+	device/lge/vk810/keylayout/hs_detect.kl:system/usr/keylayout/hs_detect.kl \
+	device/lge/vk810/keylayout/pmic8xxx_pwrkey.kl:system/usr/keylayout/pmic8xxx_pwrkey.kl \
+	device/lge/vk810/keylayout/altev-keypad-8064.kl:system/usr/keylayout/altev-keypad-8064.kl
+
+# Lights
 PRODUCT_PACKAGES += \
-        LiveWallpapers \
-        LiveWallpapersPicker \
-        VisualizationWallpapers \
-        librs_jni
+	lights.msm8960
+# Media
+PRODUCT_PACKAGES += \
+	libmm-omxcore \
+	libdivxdrmdecrypt \
+	libOmxVdec \
+	libOmxVenc \
+	libOmxCore \
+	libOmxAacEnc \
+	libOmxAmrEnc \
+	libOmxEvrcEnc \
+	libOmxQcelp13Enc \
+	libstagefrighthw \
+	libc2dcolorconvert
 
 PRODUCT_COPY_FILES += \
-        $(LOCAL_PATH)/init.altev.usb.rc:root/init.altev.usb.rc \
-	$(LOCAL_PATH)/init.altev.rc:root/init.altev.rc \
-	$(LOCAL_PATH)/fstab.altev:root/fstab.altev \
-	$(LOCAL_PATH)/ueventd.altev.rc:root/ueventd.altev.rc
-
-PRODUCT_COPY_FILES += \
-        $(LOCAL_PATH)/WCNSS_cfg.dat:system/vendor/firmware/wlan/prima/WCNSS_cfg.dat \
-        $(LOCAL_PATH)/WCNSS_qcom_cfg.ini:system/etc/wifi/WCNSS_qcom_cfg.ini \
-        $(LOCAL_PATH)/WCNSS_qcom_cfg.ini:system/firmware/wlan/prima/WCNSS_qcom_cfg.ini \
-        $(LOCAL_PATH)/WCNSS_qcom_wlan_nv.bin:system/etc/wifi/WCNSS_qcom_wlan_nv.bin \
-        $(LOCAL_PATH)/WCNSS_qcom_wlan_nv_init.bin:system/vendor/firmware/wlan/prima/WCNSS_qcom_wlan_nv_init.bin
-
-PRODUCT_COPY_FILES += \
-	$(LOCAL_PATH)/audio_policy.conf:system/etc/audio_policy.conf
-
-PRODUCT_COPY_FILES += \
-	$(LOCAL_PATH)/media_profiles.xml:system/etc/media_profiles.xml \
-	$(LOCAL_PATH)/media_codecs.xml:system/etc/media_codecs.xml \
+	device/lge/vk810/configs/media_profiles.xml:system/etc/media_profiles.xml \
+	device/lge/vk810/configs/media_codecs.xml:system/etc/media_codecs.xml \
 	frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
 	frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml
 
-# Prebuilt kl and kcm keymaps
-PRODUCT_COPY_FILES += \
-	$(LOCAL_PATH)/hs_detect.kl:system/usr/keylayout/hs_detect.kl \
-	$(LOCAL_PATH)/pmic8xxx_pwrkey.kl:system/usr/keylayout/pmic8xxx_pwrkey.kl \
-	$(LOCAL_PATH)/altev-keypad-8064.kl:system/usr/keylayout/altev-keypad-8064.kl
+# Offmode Charging
+PRODUCT_PACKAGES += \
+	charger_res_images_vk810 \
+	charger_vk810
 
-# Prebuilt input device calibration files
-PRODUCT_COPY_FILES += \
-	$(LOCAL_PATH)/touch_mxt1188S.idc:system/usr/idc/touch_mxt1188S.idc
-
-# These are the hardware-specific features
+# Permissions
 PRODUCT_COPY_FILES += \
 	frameworks/native/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml \
 	frameworks/native/data/etc/android.hardware.camera.autofocus.xml:system/etc/permissions/android.hardware.camera.autofocus.xml \
@@ -93,132 +127,39 @@ PRODUCT_COPY_FILES += \
 	frameworks/native/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml \
 	frameworks/native/data/etc/android.hardware.usb.host.xml:system/etc/permissions/android.hardware.usb.host.xml
 
-# GPS configuration
-PRODUCT_COPY_FILES += \
-	$(LOCAL_PATH)/gps.conf:system/etc/gps.conf \
-	$(LOCAL_PATH)/sap.conf:system/etc/sap.conf
-
-# IPv6 tethering
-PRODUCT_PACKAGES += \
-    ebtables \
-    ethertypes
-
-# IRSC
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/sec_config:system/etc/sec_config
-
-PRODUCT_PROPERTY_OVERRIDES += \
-	ro.opengles.version=196608
-
-# Art
-PRODUCT_PROPERTY_OVERRIDES += \
-    dalvik.vm.dex2oat-swap=false
-
-# Audio Configuration
-# FIXME: Remove persist.audio.handset.mic and persist.audio.fluence.mode
-#        while switching new audio HAL from legacy HAL
-PRODUCT_PROPERTY_OVERRIDES += \
-	persist.audio.handset.mic=digital \
-	persist.audio.fluence.mode=endfire \
-	persist.audio.lowlatency.rec=false
-
-#Upto 3 layers can go through overlays
-PRODUCT_PROPERTY_OVERRIDES += persist.hwc.mdpcomp.enable=true
-
-PRODUCT_TAGS += dalvik.gc.type-precise
-
-PRODUCT_PACKAGES += \
-	librs_jni
-
-PRODUCT_PACKAGES += \
-	libgenlock \
-	liboverlay \
-	hwcomposer.msm8960 \
-	gralloc.msm8960 \
-	copybit.msm8960 \
-	memtrack.msm8960
-
-PRODUCT_PACKAGES += \
-	audio_policy.msm8960 \
-	audio.primary.msm8960 \
-	audio.a2dp.default \
-	audio.usb.default \
-	audio.r_submix.default \
-	libaudio-resampler
-
-PRODUCT_PACKAGES += \
-	libmm-omxcore \
-	libdivxdrmdecrypt \
-	libOmxVdec \
-	libOmxVenc \
-	libOmxCore \
-	libOmxAacEnc \
-	libOmxAmrEnc \
-	libOmxEvrcEnc \
-	libOmxQcelp13Enc \
-	libstagefrighthw \
-	libc2dcolorconvert
-
-# Offmode Charging
-PRODUCT_PACKAGES += \
-    charger_res_vk810 \
-    charger_vk810
-
 # Power HAL
 PRODUCT_PACKAGES += \
 	power.msm8960
 
-PRODUCT_PROPERTY_OVERRIDES += \
-	drm.service.enabled=true
-
-PRODUCT_PROPERTY_OVERRIDES += \
-	wifi.interface=wlan0 \
-	wifi.supplicant_scan_interval=15
-
-# RIL symbols
+# Radio
 PRODUCT_PACKAGES += \
-    liblge
+	libcnefeatureconfig \
+	libxml2
 
 # Shims
 PRODUCT_PACKAGES += \
-    libshim_camera \
-    libshim_qcopt
+	libshim_camera \
+	libshim_qcopt \
+	libshim_ril
 
 # Thermal Engine
 PRODUCT_COPY_FILES += \
-	$(LOCAL_PATH)/thermal-engine-8064.conf:system/etc/thermal-engine-8064.conf
+	device/lge/vk810/configs/thermal-engine-8064.conf:system/etc/thermal-engine-8064.conf
 
-# Enable AAC 5.1 output
-PRODUCT_PROPERTY_OVERRIDES += \
-    media.aac_51_output_enabled=true
-
-PRODUCT_PROPERTY_OVERRIDES += \
-        debug.egl.recordable.rgba8888=1
-
-PRODUCT_PROPERTY_OVERRIDES += \
-	ro.qc.sensors.wl_dis=true \
-	ro.qualcomm.sensors.smd=true
-
-PRODUCT_PACKAGES += \
-	lights.msm8960
-
+# Wifi
 PRODUCT_COPY_FILES += \
-        $(LOCAL_PATH)/mixer_paths.xml:system/etc/mixer_paths.xml
-
-PRODUCT_PROPERTY_OVERRIDES += \
-	ro.sf.lcd_density=320
+	device/lge/vk810/wcnss/WCNSS_cfg.dat:system/vendor/firmware/wlan/prima/WCNSS_cfg.dat \
+	device/lge/vk810/wcnss/WCNSS_qcom_cfg.ini:system/etc/wifi/WCNSS_qcom_cfg.ini \
+	device/lge/vk810/wcnss/WCNSS_qcom_cfg.ini:system/firmware/wlan/prima/WCNSS_qcom_cfg.ini \
+	device/lge/vk810/wcnss/WCNSS_qcom_wlan_nv.bin:system/etc/wifi/WCNSS_qcom_wlan_nv.bin \
+	device/lge/vk810/wcnss/WCNSS_qcom_wlan_nv_init.bin:system/vendor/firmware/wlan/prima/WCNSS_qcom_wlan_nv_init.bin
 
 PRODUCT_PACKAGES += \
 	conn_init \
-	hwaddrs
-
-PRODUCT_COPY_FILES += \
-	$(LOCAL_PATH)/init.altev.baseband.sh:system/etc/init.altev.baseband.sh \
-	$(LOCAL_PATH)/init.qcom.bt.sh:system/etc/init.qcom.bt.sh
-
-PRODUCT_PROPERTY_OVERRIDES += \
-	ro.bt.bdaddr_path=/data/misc/bdaddr
-
-$(call inherit-product, hardware/qcom/msm8960/msm8960.mk)
+	hostapd \
+	dhcpcd.conf \
+	libwpa_client \
+	wpa_supplicant \
+	wpa_supplicant.conf
 
 $(call inherit-product, frameworks/native/build/tablet-7in-xhdpi-2048-dalvik-heap.mk)
