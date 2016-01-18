@@ -184,6 +184,10 @@ PRODUCT_PACKAGES += \
     libshim_camera \
     libshim_qcopt
 
+# Thermal Engine
+PRODUCT_COPY_FILES += \
+	$(LOCAL_PATH)/thermal-engine-8064.conf:system/etc/thermal-engine-8064.conf
+
 # Enable AAC 5.1 output
 PRODUCT_PROPERTY_OVERRIDES += \
     media.aac_51_output_enabled=true

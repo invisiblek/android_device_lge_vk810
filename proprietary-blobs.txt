@@ -14,6 +14,7 @@ bin/radish
 bin/rild
 bin/rmt_storage
 bin/sensors.qcom
+bin/thermal-engine
 bin/time_daemon
 etc/firmware/vidc_1080p.fw
 etc/firmware/vidc.b00

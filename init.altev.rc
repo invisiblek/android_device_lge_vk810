@@ -948,3 +948,8 @@ service atfwd /system/bin/ATFWD-daemon
     class late_start
     user system
     group system radio
+
+service thermal-engine /system/bin/thermal-engine
+   class late_start
+   user root
+   group root
