@@ -13,3 +13,4 @@ ro.ril.telephony.mqanelements=5
 ro.ril.transmitpower=true
 persist.qcril.disable_retry=true
 telephony.lteOnGsmDevice=1
+ro.vendor.extension_library=/vendor/lib/libqti-perfd-client.so
