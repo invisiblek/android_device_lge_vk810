@@ -953,3 +953,11 @@ service thermal-engine /system/bin/thermal-engine
    class late_start
    user root
    group root
+
+service_redefine ril-daemon /system/bin/rild
+    class main
+    socket rild stream 660 root radio
+    socket rild-debug stream 660 radio system
+    socket cutback stream 660 media radio
+    user root
+    group radio cache inet misc audio log qcom_diag net_raw
