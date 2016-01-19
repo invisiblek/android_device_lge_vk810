@@ -200,7 +200,7 @@ service time_daemon /system/bin/time_daemon
    group root
 
 on init
-   export LD_SHIM_LIBS "/system/vendor/lib/libqc-opt.so|libshim_qcopt.so:/system/lib/hw/camera.msm8960.so|libshim_camera.so:/system/lib/libril.so|libshim_ril.so"
+   export LD_SHIM_LIBS "/system/vendor/lib/libqc-opt.so|libshim_qcopt.so:/system/lib/hw/camera.msm8960.so|libshim_camera.so:/system/lib/libril.so|libshim_ril.so:/system/bin/ATFWD-daemon|libshim_ril.so"
 
 # yeunbok.ryu keyguard file for ghost finger
    chown system system /sys/devices/virtual/input/lge_touch/keyguard
