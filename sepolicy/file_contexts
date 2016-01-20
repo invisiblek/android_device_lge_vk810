@@ -1,7 +1,6 @@
 /dev/block/platform/msm_sdcc.1/by-name/persist    u:object_r:persist_block_device:s0
 
 /dev/socket/mpctl                  u:object_r:mpctl_socket:s0
-/dev/gss                           u:object_r:sensors_device:s0
 
 /data/cam_socket.*                 u:object_r:camera_socket:s0
 
