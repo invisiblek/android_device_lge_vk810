@@ -173,4 +173,7 @@
          (range of 18 - 21 kHz). -->
     <bool name="config_supportSpeakerNearUltrasound">false</bool>
 
+    <!-- Older sensors are not setting event.timestamp correctly. Setting to
+         true will use SystemClock.elapsedRealtimeNanos() to set timestamp. -->
+    <bool name="config_useSystemClockforRotationSensor">true</bool>
 </resources>
