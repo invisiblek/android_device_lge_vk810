@@ -6,7 +6,6 @@
 
 /data/app/sensor_ctl_socket        u:object_r:sensors_socket:s0
 
-/sns(/.*)?                         u:object_r:sensors_persist_file:s0
 /persist/\.bt.*                    u:object_r:persist_bluetooth_file:s0
 /dev/smd3                          u:object_r:hci_attach_dev:s0
 

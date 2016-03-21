@@ -52,8 +52,11 @@ on post-fs-data
     rm /data/misc/wifi/WCNSS_qcom_wlan_nv_init.bin
 
     #Create directory used by sensor subsystem(dsps)
+    mkdir /data/system
+    chmod 0775 /data/system
+    chown system system /data/system
     mkdir /data/system/sensors
-    chmod 665 /data/system/sensors
+    chmod 775 /data/system/sensors
     write /data/system/sensors/settings 1
     restorecon /data/system/sensors/settings
     chmod 660 /data/system/sensors/settings
@@ -75,11 +78,8 @@ on early-init
 on early-fs
     mkdir /persist 0771 system system
     mkdir /persist-lg 0771 system system
-    mkdir /sns 0775 system system
     mount_all fstab.altev
-    mkdir /sns/cal 0771 system system
 
-    restorecon_recursive /sns
     restorecon_recursive /persist
 
 on boot
@@ -610,10 +610,6 @@ on post-fs-data
     chown system system /sys/devices/platform/msm_sdcc.3/polling
     chown system system /sys/devices/platform/msm_sdcc.4/polling
 
-    #Create the symlink to qcn wpa_supplicant folder for ar6000 wpa_supplicant
-    mkdir /data/system 0775 system system
-    #symlink /data/misc/wifi/wpa_supplicant /data/system/wpa_supplicant
-
     #Create directory from IMS services
     mkdir /data/shared 0755
     chown system system /data/shared
@@ -765,7 +761,7 @@ service netmgrd /system/bin/netmgrd
 service sensors /system/bin/sensors.qcom
     class late_start
     user root
-    group root radio system
+    group root
     disabled
 
 on property:ro.dsps.ready=true

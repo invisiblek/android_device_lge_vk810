@@ -2,3 +2,4 @@
 
 type_transition mm-qcamerad system_data_file:sock_file camera_socket "cam_socket0";
 
+allow mm-qcamerad sensors_socket:sock_file read;
