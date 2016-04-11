@@ -25,7 +25,6 @@ TARGET_BOARD_PLATFORM := msm8960
 TARGET_GLOBAL_CFLAGS += -mfpu=neon -mfloat-abi=softfp
 TARGET_GLOBAL_CPPFLAGS += -mfpu=neon -mfloat-abi=softfp
 TARGET_NO_BOOTLOADER := true
-USE_CLANG_PLATFORM_BUILD := true
 
 # Audio
 BOARD_HAVE_LOW_LATENCY_AUDIO := true
