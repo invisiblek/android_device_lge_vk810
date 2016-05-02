@@ -47,6 +47,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
 	librs_jni
 
+# Gello
+PRODUCT_PACKAGES += \
+	Gello
+
 # GPS configuration
 PRODUCT_COPY_FILES += \
 	device/lge/vk810/configs/gps.conf:system/etc/gps.conf \
