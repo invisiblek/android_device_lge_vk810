@@ -101,10 +101,10 @@ on post-fs-data
    mkdir /tombstones/mdm2 0771 system system
 
 #start camera server as daemon
-service qcamerasvr /system/bin/mm-qcamera-daemon
-        class late_start
-        user camera
-        group camera system inet input graphics net_bt_stack
+#service qcamerasvr /system/bin/mm-qcamera-daemon
+#        class late_start
+#        user camera
+#        group camera system inet input graphics net_bt_stack
 
 #start GNSS/Sensor interface daemon
 service gsiff_daemon /system/bin/gsiff_daemon
