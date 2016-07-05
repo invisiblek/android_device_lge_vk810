@@ -29,7 +29,7 @@ etc/firmware/wcnss.b04
 etc/firmware/wcnss.b05
 etc/firmware/wcnss.b06
 etc/firmware/wcnss.mdt
-lib/hw/camera.msm8960.so
+lib/hw/camera.vendor.msm8960.so
 lib/hw/gps.msm8960.so
 lib/hw/sensors.msm8960.so
 lib/libacdbloader.so
