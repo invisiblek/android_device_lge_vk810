@@ -30,6 +30,10 @@ PRODUCT_PACKAGES += \
 	audio.r_submix.default \
 	libaudio-resampler
 
+# Camera
+PRODUCT_PACKAGES += \
+	Snap
+
 # Dalvik
 PRODUCT_TAGS += dalvik.gc.type-precise
 
