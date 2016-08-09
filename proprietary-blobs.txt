@@ -158,6 +158,7 @@ vendor/lib/libqmi_encdec.so
 vendor/lib/libqti-perfd-client.so
 vendor/lib/libril-qc-qmi-1.so
 vendor/lib/libsc-a3xx.so
+vendor/lib/libuiblur.so
 vendor/lib/libSHIMDivxDrm.so
 vendor/lib/libtime_genoff.so
 vendor/lib/libwvdrm_L1.so
