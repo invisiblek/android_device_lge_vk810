@@ -99,9 +99,9 @@ BOARD_RIL_CLASS := ../../../device/lge/vk810/ril/
 
 # Recovery
 BOARD_HAS_NO_SELECT_BUTTON := true
+BOARD_NO_SECURE_DISCARD := true
 BOARD_RECOVERY_SWIPE := true
 BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_23x41.h\"
-COMMON_GLOBAL_CFLAGS += -DNO_SECURE_DISCARD
 RECOVERY_FSTAB_VERSION = 2
 TARGET_RECOVERY_FSTAB = device/lge/vk810/rootdir/etc/fstab.altev
 TARGET_RECOVERY_LCD_BACKLIGHT_PATH := \"/sys/class/leds/lcd-backlight/brightness\"
