@@ -165,7 +165,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
 	conn_init \
 	hostapd \
-	dhcpcd.conf \
 	libwpa_client \
 	wpa_supplicant \
 	wpa_supplicant.conf
