@@ -36,3 +36,5 @@ ro.qualcomm.sensors.smd=true
 
 wifi.interface=wlan0
 wifi.supplicant_scan_interval=15
+
+ro.sdcardfs.enable=true
