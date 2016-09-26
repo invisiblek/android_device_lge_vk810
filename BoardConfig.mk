@@ -32,6 +32,7 @@ BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02000000
 # Try to build the kernel
 TARGET_KERNEL_SOURCE := kernel/lge/vk810
 BOARD_KERNEL_CMDLINE := console=none user_debug=31 msm_rtb.filter=0x3F ehci-hcd.park=3 lpj=67677 androidboot.hardware=altev vmalloc=400M no_console_suspend
+BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 TARGET_KERNEL_CONFIG := cyanogenmod_vk810_defconfig
 BOARD_CUSTOM_BOOTIMG := true
 BOARD_CUSTOM_BOOTIMG_MK := device/lge/vk810/mkbootimg.mk
@@ -116,17 +117,6 @@ TARGET_RECOVERY_LCD_BACKLIGHT_PATH := \"/sys/class/leds/lcd-backlight/brightness
 TARGET_RECOVERY_FSTAB = device/lge/vk810/fstab.altev
 
 BOARD_HAS_NO_SELECT_BUTTON := true
-
-# SELinux policies
-# qcom sepolicy
-include device/qcom/sepolicy/sepolicy.mk
-
-BOARD_SEPOLICY_DIRS += \
-        device/lge/vk810/sepolicy
-
-BOARD_SEPOLICY_UNION += \
-        bluetooth_loader.te \
-        kernel.te
 
 BOARD_USES_QC_TIME_SERVICES := true
 
