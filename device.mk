@@ -150,6 +150,14 @@ PRODUCT_PACKAGES += \
 	libshim_qcopt \
 	libshim_ril
 
+# SSL Compat
+PRODUCT_PACKAGES += \
+    libboringssl-compat
+
+# Stlport
+PRODUCT_PACKAGES += \
+    libstlport
+
 # Thermal Engine
 PRODUCT_COPY_FILES += \
 	device/lge/vk810/configs/thermal-engine-8064.conf:system/etc/thermal-engine-8064.conf
