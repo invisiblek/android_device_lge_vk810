@@ -38,3 +38,5 @@ wifi.interface=wlan0
 wifi.supplicant_scan_interval=15
 
 ro.sys.sdcardfs=true
+
+ro.radio.noril=1
