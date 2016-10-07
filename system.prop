@@ -42,3 +42,6 @@ ro.sys.sdcardfs=true
 ro.radio.noril=1
 
 qcom.bluetooth.soc=smd
+
+media.stagefright.legacyencoder=true
+media.stagefright.less-secure=true
