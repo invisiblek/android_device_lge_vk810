@@ -2,7 +2,7 @@
 $(call inherit-product, vendor/cm/config/common_full_tablet_wifionly.mk)
 $(call inherit-product, vendor/cm/config/telephony.mk)
 
-$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/embedded.mk)
 
 $(call inherit-product, device/lge/vk810/device.mk)
 $(call inherit-product-if-exists, vendor/lge/vk810/vk810-vendor.mk)
