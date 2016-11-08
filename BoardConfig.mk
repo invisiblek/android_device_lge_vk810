@@ -107,6 +107,9 @@ TARGET_RECOVERY_FSTAB = device/lge/vk810/rootdir/etc/fstab.altev
 TARGET_RECOVERY_LCD_BACKLIGHT_PATH := \"/sys/class/leds/lcd-backlight/brightness\"
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 
+# SDClang
+TARGET_USE_SDCLANG := true
+
 # Time Services
 BOARD_USES_QC_TIME_SERVICES := true
 
