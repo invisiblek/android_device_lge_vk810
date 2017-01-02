@@ -1,5 +1,7 @@
 Copyright 2015 - The CyanogenMod Project
 
+Copyright 2017 - The LineageOS Project
+
 Device configuration for LGE G Pad 8.3 (Verizon)
 ================================================
 

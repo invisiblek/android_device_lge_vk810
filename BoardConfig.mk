@@ -1,5 +1,6 @@
 #
 # Copyright (C) 2013 The CyanogenMod Project
+# Copyright (C) 2017 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -80,7 +81,7 @@ BOARD_KERNEL_CMDLINE := console=none user_debug=31 msm_rtb.filter=0x3F ehci-hcd.
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02000000
 TARGET_KERNEL_SOURCE := kernel/lge/vk810
-TARGET_KERNEL_CONFIG := cyanogenmod_vk810_defconfig
+TARGET_KERNEL_CONFIG := lineageos_vk810_defconfig
 
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 23068672 # 22M
