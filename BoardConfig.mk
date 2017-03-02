@@ -112,6 +112,10 @@ TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 # SDClang
 TARGET_USE_SDCLANG := true
 
+# SELinux policies
+include device/qcom/sepolicy/sepolicy.mk
+BOARD_SEPOLICY_DIRS += device/lge/vk801/sepolicy
+
 # Time Services
 BOARD_USES_QC_TIME_SERVICES := true
 

@@ -1,0 +1,35 @@
+# Bluetooth
+/system/bin/init\.awifi\.bt\.sh                      u:object_r:bluetooth_loader_exec:s0
+
+# Camera
+/dev/gemini0                                         u:object_r:camera_device:s0
+/data/misc/camera/cam_socket.*                       u:object_r:camera_socket:s0
+
+# CMHW
+/sys/devices/platform/kcal_ctrl\.0/kcal              u:object_r:kcal_sysfs:s0
+/sys/devices/platform/kcal_ctrl\.0/kcal_ctrl         u:object_r:kcal_sysfs:s0
+/sys/devices/virtual/timed_output/vibrator/amp       u:object_r:vibeamp_sysfs:s0
+
+# Dev block nodes
+/dev/block/platform/msm_sdcc\.1/by-name/encrypt      u:object_r:encrypt_block_device:s0
+
+# GPU
+/sys/devices/platform/kgsl-3d0\.0/kgsl/kgsl-3d0/gpuclk         u:object_r:sysfs_thermal:s0
+/sys/devices/platform/kgsl-3d0\.0/kgsl/kgsl-3d0/max_gpuclk     u:object_r:sysfs_thermal:s0
+
+# GSS
+/dev/gss                                             u:object_r:gss_device:s0
+
+# Hwaddrs
+/system/bin/hwaddrs                                  u:object_r:hwaddrs_exec:s0
+
+# Sensors
+/data/app/sensor_ctl_socket                          u:object_r:sensors_socket:s0
+
+# Tee
+/data/misc/playready(/.*)?                           u:object_r:tee_data_file:s0
+/data/misc/tzapps(/.*)?                              u:object_r:tee_data_file:s0
+
+# Wifi
+/system/bin/conn_init                                u:object_r:conn_init_exec:s0
+/system/bin/init\.awifi\.wifi\.sh                    u:object_r:conn_init_exec:s0
