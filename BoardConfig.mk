@@ -79,7 +79,7 @@ BOARD_KERNEL_BASE := 0x80200000
 BOARD_KERNEL_CMDLINE := console=none user_debug=31 msm_rtb.filter=0x3F ehci-hcd.park=3 lpj=67677 androidboot.hardware=altev vmalloc=400M no_console_suspend androidboot.selinux=permissive
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02000000
-TARGET_KERNEL_SOURCE := kernel/lge/vk810
+TARGET_KERNEL_SOURCE := kernel/lge/v500
 TARGET_KERNEL_CONFIG := lineageos_vk810_defconfig
 
 # Partitions
