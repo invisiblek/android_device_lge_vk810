@@ -16,7 +16,6 @@
 #
 
 # Platform
-BOARD_USES_QCOM_HARDWARE := true
 TARGET_ARCH := arm
 TARGET_ARCH_VARIANT := armv7-a-neon
 TARGET_CPU_ABI := armeabi-v7a
