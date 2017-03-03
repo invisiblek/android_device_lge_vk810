@@ -46,6 +46,9 @@ on post-fs-data
 
     write /sys/module/wcnss_ssr_8960/parameters/enable_riva_ssr 1
 
+    # Create directory used by camera subsystem
+    mkdir /data/misc/camera 0770 camera camera
+
     # Workaround for conn_init not copying the updated firmware
     rm /data/misc/wifi/WCNSS_qcom_cfg.ini
     rm /data/misc/wifi/WCNSS_qcom_wlan_nv.bin
