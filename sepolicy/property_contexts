@@ -1,3 +1,0 @@
-persist.data.sensor                    u:object_r:camera_prop:s0
-persist.camera.snapshot.number         u:object_r:camera_prop:s0
-persist.camera.zsl.queuedepth          u:object_r:camera_prop:s0

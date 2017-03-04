@@ -1,6 +1,6 @@
 [
- {
-   "repository": "android_kernel_lge_vk810",
-   "target_path": "kernel/lge/vk810"
- }
+  {
+    "repository": "android_device_lge_gpad83-common",
+    "target_path": "device/lge/gpad83-common"
+  }
 ]
