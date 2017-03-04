@@ -1,0 +1,8 @@
+/cache             ext4       /dev/block/platform/msm_sdcc.1/by-name/cache
+/system            ext4       /dev/block/platform/msm_sdcc.1/by-name/system
+/data              ext4       /dev/block/platform/msm_sdcc.1/by-name/userdata       flags=encryptable=/dev/block/platform/msm_sdcc.1/by-name/encrypt
+/boot              emmc       /dev/block/platform/msm_sdcc.1/by-name/boot
+/recovery          emmc       /dev/block/platform/msm_sdcc.1/by-name/recovery
+/misc              emmc       /dev/block/platform/msm_sdcc.1/by-name/bnr
+/external_sd       vfat       /dev/block/mmcblk1p1  /dev/block/mmcblk1
+/usb-otg           vfat       /dev/block/sda1  /dev/block/sda                       flags=storage;wipeingui;removable

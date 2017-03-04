@@ -37,3 +37,8 @@ BOARD_RIL_CLASS := ../../../device/lge/vk810/ril/
 
 # inherit from the proprietary version
 -include vendor/lge/vk810/BoardConfigVendor.mk
+
+# TWRP Support - Optional
+ifeq ($(WITH_TWRP),true)
+-include device/lge/vk810/twrp.mk
+endif
