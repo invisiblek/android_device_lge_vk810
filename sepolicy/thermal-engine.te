@@ -1,4 +1,0 @@
-allow thermal-engine mpdecision_socket:dir search;
-allow thermal-engine self:capability net_admin;
-allow thermal-engine self:netlink_kobject_uevent_socket { bind setopt read };
-allow thermal-engine sysfs_devices_system_cpu:file write;

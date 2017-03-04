@@ -1,11 +1,13 @@
+# Inherit from the common Open Source product configuration
+$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
+
+# Inherit from hardware-specific part of the product configuration
+$(call inherit-product, device/lge/vk810/device.mk)
+$(call inherit-product-if-exists, vendor/lge/vk810/vk810-vendor.mk)
+
 # Inherit some common Lineage stuff.
 $(call inherit-product, vendor/cm/config/common_full_tablet_wifionly.mk)
 $(call inherit-product, vendor/cm/config/telephony.mk)
-
-$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
-
-$(call inherit-product, device/lge/vk810/device.mk)
-$(call inherit-product-if-exists, vendor/lge/vk810/vk810-vendor.mk)
 
 PRODUCT_DEVICE := vk810
 PRODUCT_NAME := lineage_vk810
