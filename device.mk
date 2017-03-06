@@ -18,3 +18,10 @@ DEVICE_PACKAGE_OVERLAYS := device/lge/vk810/overlay
 
 # Inherit from gpad83-common
 $(call inherit-product, device/lge/gpad83-common/gpad83-common.mk)
+
+# Wifi
+PRODUCT_COPY_FILES += \
+    device/lge/vk810/wifi/WCNSS_cfg.dat:system/vendor/firmware/wlan/prima/WCNSS_cfg.dat \
+    device/lge/vk810/wifi/WCNSS_qcom_cfg.ini:system/etc/wifi/WCNSS_qcom_cfg.ini \
+    device/lge/vk810/wifi/WCNSS_qcom_cfg.ini:system/firmware/wlan/prima/WCNSS_qcom_cfg.ini \
+    device/lge/vk810/wifi/WCNSS_qcom_wlan_nv.bin:system/etc/wifi/WCNSS_qcom_wlan_nv.bin
