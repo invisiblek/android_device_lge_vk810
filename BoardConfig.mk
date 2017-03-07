@@ -21,10 +21,6 @@
 # Assert
 TARGET_OTA_ASSERT_DEVICE := altev,vk810
 
-# Hardware tunables
-BOARD_HARDWARE_CLASS += hardware/cyanogen/cmhw
-BOARD_USES_CYANOGEN_HARDWARE := true
-
 # Kernel
 BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 TARGET_KERNEL_CONFIG := lineageos_vk810_defconfig
