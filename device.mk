@@ -19,6 +19,11 @@ DEVICE_PACKAGE_OVERLAYS := device/lge/vk810/overlay
 # Inherit from gpad83-common
 $(call inherit-product, device/lge/gpad83-common/gpad83-common.mk)
 
+# Rootdir
+PRODUCT_COPY_FILES += \
+    device/lge/vk810/rootdir/fstab.altev:root/fstab.altev \
+    device/lge/vk810/rootdir/init.target.rc:root/init.target.rc \
+
 # Wifi
 PRODUCT_COPY_FILES += \
     device/lge/vk810/wifi/WCNSS_cfg.dat:system/vendor/firmware/wlan/prima/WCNSS_cfg.dat \
