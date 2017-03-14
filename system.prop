@@ -27,7 +27,6 @@ media.aac_51_output_enabled=true
 persist.audio.handset.mic=digital
 persist.audio.fluence.mode=endfire
 persist.audio.lowlatency.rec=false
-ro.sf.lcd_density=320
 
 drm.service.enabled=true
 
