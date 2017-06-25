@@ -42,3 +42,5 @@ qcom.bluetooth.soc=smd
 
 media.stagefright.legacyencoder=true
 media.stagefright.less-secure=true
+
+ro.build.shutdown_timeout=5
