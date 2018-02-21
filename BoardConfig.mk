@@ -32,8 +32,5 @@ BOARD_RECOVERYIMAGE_PARTITION_SIZE := 23068672 # 22M
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 2147483648 # 2048M
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 6189744128 # 5.9G
 
-# Radio
-BOARD_RIL_CLASS := ../../../device/lge/vk810/ril/
-
 # inherit from the proprietary version
 -include vendor/lge/vk810/BoardConfigVendor.mk
