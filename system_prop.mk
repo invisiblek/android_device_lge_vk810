@@ -46,8 +46,5 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.radio.noril=1
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    qcom.bluetooth.soc=smd
-
-PRODUCT_PROPERTY_OVERRIDES += \
     media.stagefright.legacyencoder=true \
     media.stagefright.less-secure=true
