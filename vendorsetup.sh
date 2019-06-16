@@ -1,0 +1,2 @@
+add_lunch_combo lineage_vk810-eng
+add_lunch_combo lineage_vk810-userdebug
