@@ -14,6 +14,9 @@
 # limitations under the License.
 #
 
+# System Properties
+$(call inherit-product, device/lge/vk810/system_prop.mk)
+
 DEVICE_PACKAGE_OVERLAYS := device/lge/vk810/overlay
 
 # Inherit from gpad83-common
