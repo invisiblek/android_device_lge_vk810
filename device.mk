@@ -17,18 +17,18 @@
 # System Properties
 $(call inherit-product, device/lge/vk810/system_prop.mk)
 
-DEVICE_PACKAGE_OVERLAYS := device/lge/vk810/overlay
+DEVICE_PACKAGE_OVERLAYS := $(LOCAL_PATH)/overlay
 
 # Inherit from gpad83-common
 $(call inherit-product, device/lge/gpad83-common/gpad83-common.mk)
 
 # Rootdir
 PRODUCT_COPY_FILES += \
-    device/lge/vk810/rootdir/fstab.altev:root/fstab.altev \
-    device/lge/vk810/rootdir/init.target.rc:root/init.target.rc \
+    $(LOCAL_PATH)/rootdir/fstab.altev:root/fstab.altev \
+    $(LOCAL_PATH)/rootdir/init.target.rc:root/init.target.rc \
 
 # Wifi
 PRODUCT_COPY_FILES += \
-    device/lge/vk810/wifi/WCNSS_cfg.dat:system/vendor/firmware/wlan/prima/WCNSS_cfg.dat \
-    device/lge/vk810/wifi/WCNSS_qcom_cfg.ini:system/vendor/etc/wifi/WCNSS_qcom_cfg.ini \
-    device/lge/vk810/wifi/WCNSS_qcom_wlan_nv.bin:system/vendor/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin
+    $(LOCAL_PATH)/wifi/WCNSS_cfg.dat:system/vendor/firmware/wlan/prima/WCNSS_cfg.dat \
+    $(LOCAL_PATH)/wifi/WCNSS_qcom_cfg.ini:system/vendor/etc/wifi/WCNSS_qcom_cfg.ini \
+    $(LOCAL_PATH)/wifi/WCNSS_qcom_wlan_nv.bin:system/vendor/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin
