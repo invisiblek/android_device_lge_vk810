@@ -7,7 +7,6 @@ $(call inherit-product-if-exists, vendor/lge/vk810/vk810-vendor.mk)
 
 # Inherit some common Lineage stuff.
 $(call inherit-product, vendor/lineage/config/common_full_tablet_wifionly.mk)
-$(call inherit-product, vendor/lineage/config/telephony.mk)
 
 PRODUCT_DEVICE := vk810
 PRODUCT_NAME := lineage_vk810
