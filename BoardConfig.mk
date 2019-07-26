@@ -34,3 +34,8 @@ BOARD_USERDATAIMAGE_PARTITION_SIZE := 6189744128 # 5.9G
 
 # inherit from the proprietary version
 -include vendor/lge/vk810/BoardConfigVendor.mk
+
+# TWRP
+ifeq ($(WITH_TWRP),true)
+-include device/lge/vk810/twrp.mk
+endif
