@@ -5,7 +5,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.cabc_off=true
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    rild.libpath=/system/lib/libril-qc-qmi-1.so \
+    rild.libpath=/vendor/lib/libril-qc-qmi-1.so \
     ro.telephony.default_network=9 \
     persist.radio.apm_sim_not_pwdn=1 \
     ril.subscription.types=NV,RUIM \
