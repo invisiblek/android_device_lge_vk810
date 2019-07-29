@@ -100,7 +100,6 @@ vendor/lib/libdss.so
 vendor/lib/libdsutils.so
 vendor/lib/libgemini.so
 vendor/lib/libgeofence.so
-vendor/lib/libgps.utils.so
 vendor/lib/libgsl.so
 vendor/lib/libHDR.so
 vendor/lib/libidl.so
@@ -111,9 +110,7 @@ vendor/lib/liblbs_core.so
 vendor/lib/liblgftmitem.so
 vendor/lib/libllvm-qcom.so
 vendor/lib/libloc_api_v02.so
-vendor/lib/libloc_core.so
 vendor/lib/libloc_ds_api.so
-vendor/lib/libloc_eng.so
 vendor/lib/libmercury.so
 vendor/lib/libmmcamera_3a_legacy.so
 vendor/lib/libmmcamera_faceproc.so
