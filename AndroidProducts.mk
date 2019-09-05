@@ -15,3 +15,7 @@
 
 PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/lineage_vk810.mk
+
+COMMON_LUNCH_CHOICES := \
+    lineage_vk810-eng \
+    lineage_vk810-userdebug
