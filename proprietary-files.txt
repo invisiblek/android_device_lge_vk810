@@ -12,7 +12,6 @@ vendor/bin/qcks
 vendor/bin/qmuxd
 vendor/bin/qseecomd
 vendor/bin/radish
-vendor/bin/rild
 vendor/bin/rmt_storage
 vendor/bin/sensors.qcom
 vendor/bin/thermal-engine
@@ -149,8 +148,6 @@ vendor/lib/libQSEEComAPI.so
 vendor/lib/libqti-perfd-client.so
 vendor/lib/libril-qc-qmi-1.so
 vendor/lib/libril-qcril-hook-oem.so
-vendor/lib/libril.so
-vendor/lib/librilutils.so
 vendor/lib/librs_adreno_sha1.so
 vendor/lib/librs_adreno.so
 vendor/lib/libRSDriver_adreno.so
